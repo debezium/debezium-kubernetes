@@ -9,6 +9,7 @@
   <version>0.1-SNAPSHOT</version>
   <modules>
     <module>mysql56</module>
+    <module>connect-mysql</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -73,5 +74,13 @@
       </plugin>
     </plugins>
   </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>io.fabric8</groupId>
+      <artifactId>kubernetes-generator</artifactId>
+      <version>${fabric8.version}</version>
+    </dependency>
+  </dependencies>
 
 </project>

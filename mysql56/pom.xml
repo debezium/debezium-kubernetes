@@ -30,11 +30,4 @@
     <fabric8.env.MYSQL_BINLOG_FORMAT>ROW</fabric8.env.MYSQL_BINLOG_FORMAT>
   </properties>
 
-  <dependencies>
-    <dependency>
-      <groupId>io.fabric8</groupId>
-      <artifactId>kubernetes-generator</artifactId>
-      <version>${fabric8.version}</version>
-    </dependency>
-  </dependencies>
 </project>

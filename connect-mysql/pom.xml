@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>debezium-kubernetes-parent</artifactId>
+    <groupId>io.debezium</groupId>
+    <version>0.1-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>connect-mysql</artifactId>
+
+
+  <properties>
+    <fabric8.label.project>connect-mysql</fabric8.label.project>
+    <fabric8.label.provider>debezium</fabric8.label.provider>
+    <fabric8.imagePullPolicy>IfNotPresent</fabric8.imagePullPolicy>
+    <fabric8.service.mysql.port>80</fabric8.service.mysql.port>
+    <fabric8.service.mysql.containerPort>8083</fabric8.service.mysql.containerPort>
+
+    <docker.image>docker.io/debezium/connect:0.1</docker.image>
+    <docker.port.container.rest>8083</docker.port.container.rest>
+    <docker.port.container.debug>5005</docker.port.container.debug>
+
+
+    <!-- environment variables-->
+    <fabric8.env.HOST_NAME>0.0.0.0</fabric8.env.HOST_NAME>
+    <fabric8.env.BOOTSTRAP_SERVERS>kafka:9092</fabric8.env.BOOTSTRAP_SERVERS>
+    <fabric8.env.GROUP_ID>connect-mysql</fabric8.env.GROUP_ID>
+    <fabric8.env.CONFIG_STORAGE_TOPIC>my-connect-configs</fabric8.env.CONFIG_STORAGE_TOPIC>
+    <fabric8.env.OFFSET_STORAGE_TOPIC>my-connect-offsets</fabric8.env.OFFSET_STORAGE_TOPIC>
+    <fabric8.env.KAFKA_OPTS>-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005  </fabric8.env.KAFKA_OPTS>
+  </properties>
+
+</project>

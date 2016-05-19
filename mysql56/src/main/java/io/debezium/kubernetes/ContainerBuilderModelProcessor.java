@@ -26,7 +26,7 @@ import javax.inject.Named;
  * <a href="http://christianposta.com/blog>http://christianposta.com/blog</a>.
  */
 @KubernetesModelProcessor
-public class ReplicaControllerModelProcessor {
+public class ContainerBuilderModelProcessor {
 
     @Named("mysql56")
     public void on(ContainerBuilder cb) {
