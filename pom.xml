@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>io.debezium</groupId>
+  <artifactId>debezium-kubernetes-parent</artifactId>
+  <version>0.1-SNAPSHOT</version>
+  <modules>
+    <module>mysql56</module>
+  </modules>
+  <packaging>pom</packaging>
+
+  <issueManagement>
+    <system>jira</system>
+    <url>http://issues.jboss.org/browse/DBZ</url>
+  </issueManagement>
+  <licenses>
+    <license>
+      <name>Apache Software License 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>rhauch</id>
+      <name>Randall Hauch</name>
+      <organization>Red Hat</organization>
+      <organizationUrl>http://redhat.com</organizationUrl>
+      <timezone>-6</timezone>
+    </developer>
+    <developer>
+      <id>ceposta</id>
+      <name>Christian Posta</name>
+      <organization>Red Hat</organization>
+      <organizationUrl>http://redhat.com</organizationUrl>
+      <timezone>-7</timezone>
+    </developer>
+  </developers>
+
+  <properties>
+    <fabric8.version>2.2.115</fabric8.version>
+    <docker.maven.plugin.version>0.15.1</docker.maven.plugin.version>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>io.fabric8</groupId>
+        <artifactId>fabric8-maven-plugin</artifactId>
+        <version>${fabric8.version}</version>
+        <executions>
+          <execution>
+            <id>json</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>json</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>attach</id>
+            <phase>package</phase>
+            <goals>
+              <goal>attach</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <replaceReadmeLinksPrefix>/apps/</replaceReadmeLinksPrefix>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

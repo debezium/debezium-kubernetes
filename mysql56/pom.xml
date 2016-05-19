@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>debezium-kubernetes-parent</artifactId>
+    <groupId>io.debezium</groupId>
+    <version>0.1-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>mysql56</artifactId>
+
+  <properties>
+    <fabric8.label.project>mysql56</fabric8.label.project>
+    <fabric8.label.provider>debezium</fabric8.label.provider>
+    <fabric8.imagePullPolicy>IfNotPresent</fabric8.imagePullPolicy>
+    <fabric8.service.mysql.port>3306</fabric8.service.mysql.port>
+    <fabric8.service.mysql.containerPort>3306</fabric8.service.mysql.containerPort>
+
+    <docker.image>docker.io/centos/mysql-56-centos7:latest</docker.image>
+
+    <!-- environment variables-->
+    <fabric8.env.MYSQL_MASTER_USER>replicator</fabric8.env.MYSQL_MASTER_USER>
+    <fabric8.env.MYSQL_MASTER_PASSWORD>replpass</fabric8.env.MYSQL_MASTER_PASSWORD>
+    <fabric8.env.MYSQL_ROOT_PASSWORD>admin</fabric8.env.MYSQL_ROOT_PASSWORD>
+    <fabric8.env.MYSQL_USER>ticket</fabric8.env.MYSQL_USER>
+    <fabric8.env.MYSQL_PASSWORD>monster</fabric8.env.MYSQL_PASSWORD>
+    <fabric8.env.MYSQL_DATABASE>ticketmonster</fabric8.env.MYSQL_DATABASE>
+    <fabric8.env.MYSQL_BINLOG_FORMAT>ROW</fabric8.env.MYSQL_BINLOG_FORMAT>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>io.fabric8</groupId>
+      <artifactId>kubernetes-generator</artifactId>
+      <version>${fabric8.version}</version>
+    </dependency>
+  </dependencies>
+</project>
