@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>debezium-kubernetes-parent</artifactId>
+    <groupId>io.debezium</groupId>
+    <version>0.1-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>zk-standalone</artifactId>
+
+  <properties>
+    <fabric8.label.project>zookeeper</fabric8.label.project>
+    <fabric8.label.provider>debezium</fabric8.label.provider>
+    <fabric8.imagePullPolicy>IfNotPresent</fabric8.imagePullPolicy>
+    <fabric8.service.zookeeper.port>2181</fabric8.service.zookeeper.port>
+    <fabric8.service.zookeeper.containerPort>2181</fabric8.service.zookeeper.containerPort>
+
+    <docker.image>docker.io/debezium/zookeeper:0.1</docker.image>
+    <docker.port.container.client>2181</docker.port.container.client>
+    <docker.port.container.peer>2888</docker.port.container.peer>
+    <docker.port.container.election>3888</docker.port.container.election>
+  </properties>
+</project>

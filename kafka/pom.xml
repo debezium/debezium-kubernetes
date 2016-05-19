@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>debezium-kubernetes-parent</artifactId>
+    <groupId>io.debezium</groupId>
+    <version>0.1-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>kafka</artifactId>
+
+  <properties>
+    <fabric8.label.project>kafka</fabric8.label.project>
+    <fabric8.label.provider>debezium</fabric8.label.provider>
+    <fabric8.imagePullPolicy>IfNotPresent</fabric8.imagePullPolicy>
+    <fabric8.service.kafka.port>9092</fabric8.service.kafka.port>
+    <fabric8.service.kafka.containerPort>9092</fabric8.service.kafka.containerPort>
+
+    <docker.image>docker.io/debezium/kafka:0.1</docker.image>
+    <docker.port.container.plaintext>9092</docker.port.container.plaintext>
+
+    <fabric8.env.KAFKA_PORT>9092</fabric8.env.KAFKA_PORT>
+    <fabric8.env.KAFKA_ADVERTISED_PORT>9092</fabric8.env.KAFKA_ADVERTISED_PORT>
+    <fabric8.env.KAFKA_ADVERTISED_HOST_NAME>kafka</fabric8.env.KAFKA_ADVERTISED_HOST_NAME>
+    <fabric8.env.KAFKA_ZOOKEEPER_CONNECT>zookeeper:2181</fabric8.env.KAFKA_ZOOKEEPER_CONNECT>
+
+  </properties>
+</project>

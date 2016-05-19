@@ -10,6 +10,8 @@
   <modules>
     <module>mysql56</module>
     <module>connect-mysql</module>
+    <module>zk-standalone</module>
+    <module>kafka</module>
   </modules>
   <packaging>pom</packaging>
 
