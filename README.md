@@ -1,5 +1,7 @@
 ##  Running Debezium on Kubernetes/OpenShift
 
+**Note**: This project is archived. The [recommended way](https://debezium.io/docs/openshift/) for running Debezium as well as Apache Kafka, Kafka Connect on ZooKeeper on Kubernetes and distributions such as OpenShift is to use the custom resource definitions (CRDs) and operators provided by the [Strimzi](http://strimzi.io/) project.
+
 This project builds the kubernetes manifest files for running Zookeeper (standalone at the moment), Apache Kafka, Kafka Connect with the Debezium MySQL connector and a MySQL 5.6 database on Kubernetes. The project uses the awesome [fabric8-maven-plugin](http://fabric8.io/guide/mavenPlugin.html) for automatically generating the manifest in both `json` and `yaml` formats. 
 
 To build, go to the root of this project and run:
